@@ -1,40 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHẦN THƯỞNG🎁</title>
+    <title>Đờm nguuu</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            width: 100%;
             height: 100%;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             background-color: black;
+            overflow: hidden;
+            color: white;
+            font-family: Arial, sans-serif;
         }
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        .rotate-text {
+            font-size: 5rem;
+            font-weight: bold;
+            animation: rotate 5s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .fireworks {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: fireworks 1.5s linear infinite;
+        }
+
+        @keyframes fireworks {
+            0% { opacity: 0; transform: scale(0) rotate(0); }
+            50% { opacity: 1; transform: scale(1.5) rotate(45deg); }
+            100% { opacity: 0; transform: scale(0) rotate(0); }
         }
     </style>
 </head>
 <body>
-    <video id="video" autoplay muted loop>
-        <source src="https://firebasestorage.googleapis.com/v0/b/nhachay-43b11.appspot.com/o/YouCut_20240628_154055561.mp4?alt=media&token=d807a742-5250-4856-a899-7337dc971307" type="video/mp4">
-    </video>
-    <script>
-        const video = document.getElementById('video');
-
-        video.addEventListener('click', () => {
-            video.src = "https://drive.google.com/file/d/1rVlbPQADD0n21Sz04khd8_oSSsl2v70F/view";
-            video.loop = true;
-            video.muted = false; 
-            video.play();
-        });
-    </script>
+    <div class="container">
+        <div class="rotate-text">Đờm nguuu</div>
+        <div class="fireworks"></div>
+        <div class="fireworks" style="animation-delay: 0.5s;"></div>
+        <div class="fireworks" style="animation-delay: 1s;"></div>
+    </div>
 </body>
 </html>
